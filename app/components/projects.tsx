@@ -22,29 +22,30 @@ import Logo from "@/components/logo";
 import {goToDiv} from "@/utils/goToContact";
 
 const Projects = () => {
-
-
     return (
-        <div className="px-40 mt-40" id={"projects"}>
-            <div className={"flex justify-between items-center"}>
+        <div className="px-4 md:px-40 mt-20 md:mt-40" id={"projects"}>
+            <div className={"md:flex justify-between items-center"}>
                 <div className={"w-fit"}>
-                    <h2 className={"text-6xl font-bold font-Aeonik "}>FEATURED <span
-                        className={"font-Edwardian font-medium text-8xl "}>projects</span></h2>
-                    <div className={"bg-gradient-to-r from-[#4297AA] to-[#D67221] h-1 rounded-xl -mt-2 "}></div>
+                    <h2 className={"text-3xl md:text-6xl font-bold font-Aeonik flex items-center md:block gap-3 "}>FEATURED <span
+                        className={"-mt-2 md:mt-0 font-Edwardian font-medium text-6xl md:text-8xl "}>projects</span>
+                    </h2>
+                    <div className={"bg-gradient-to-r from-[#4297AA] to-[#D67221] h-1 rounded-xl -mt-2  "}></div>
                 </div>
-                <Buttons content={"Let's discuss"} onClick={() => goToDiv("contact")}/>
+
+                <Buttons content={"Let's discuss"} onClick={() => goToDiv("contact")}
+                         className={"text-sm md:text-base mt-4 md:mt-0 hidden md:flex"}/>
             </div>
 
 
-            <Accordion type="single" collapsible className="mt-10">
+            <Accordion type="single" collapsible className="mt-4 md:mt-10">
                 <AccordionItem value="item-1">
                     <AccordionTrigger>
-                        <div className={"text-5xl flex py-8 gap-2"}>
+                        <div className={"text-2xl md:text-5xl flex py-3 md:py-8 gap-2"}>
                             <p>01.</p>
                             <p>Rooms</p>
                         </div>
-
-                        <div className={"font-bold font-Helvetica border-2 rounded-full px-6 py-3  "}>
+                        <div
+                            className={"text-[7px] md:text-base font-bold font-Helvetica border-2 rounded-full px-2 py-1 md:px-6 md:py-3  "}>
                             ROOM RENTING WEBSITE
                         </div>
                     </AccordionTrigger>
@@ -52,30 +53,37 @@ const Projects = () => {
                         <Image
                             alt={"roomsBg"}
                             src={roomsBg}
-                            className={"rounded-t-3xl h-96 w-full flex items-center justify-center  object-cover"}>
+                            className={"rounded-t-3xl h-48 md:h-96 w-full flex items-center justify-center  object-cover"}>
                         </Image>
 
 
                         <div className={""}>
                             <div>
-                                <div className={"mt-8 flex justify-between items-center"}>
-                                    <p className={"w-1/2 font-Aeonik text-base"}> A property rental platform that
+                                <div className={"mt-8 md:flex justify-between items-center"}>
+                                    <p className={"text-xs md:w-1/2 font-Aeonik md:text-base"}>
+                                        A property rental
+                                        platform that
                                         enables
                                         users
                                         to compare
                                         and book accommodations based on availability, price, and destination, while
                                         allowing
                                         tenants to manage their listings, pricing, and bookings.</p>
-                                    <Link href="https://rooms-hizkia-sihombings-projects.vercel.app/" target="_blank"
-                                          rel="noopener noreferrer">
-                                        <Buttons content={"Visit"} className={"text-4xl "} noArrow={true}/>
-                                    </Link>
 
+                                    <div className={"hidden md:flex justify-end"}>
+                                        <Link href="https://rooms-hizkia-sihombings-projects.vercel.app/"
+                                              target="_blank"
+                                              rel="noopener noreferrer" className={"w-fit "}>
+                                            <Buttons content={"Visit"}
+                                                     className={"text-lg md:text-4xl px-4 py-1 rounded-xl mt-4 md:mt-0 "}
+                                                     noArrow={true}/>
+                                        </Link>
+                                    </div>
                                 </div>
 
 
-                                <div className={"flex justify-between mt-6 w-full"}>
-                                    <div className={"flex gap-2"}>
+                                <div className={"md:flex justify-between mt-6 w-full"}>
+                                    <div className={"flex flex-wrap md:w-full gap-x-1 gap-y-1  md:flex md:gap-2 "}>
                                         <Logo img={typescriptLogo} name={"TypeScript"}/>
                                         <Logo img={nextLogo} name={"Next.js"}/>
                                         <Logo img={postgreLogo} name={"PostGreSQL"}/>
@@ -83,19 +91,33 @@ const Projects = () => {
                                         <Logo img={redisLogo} name={"Redis"}/>
                                     </div>
 
-                                    <div className={" gap-2 mt-4 flex "}>
+
+                                    <div className={"gap-2 mt-4 flex items-center "}>
                                         <Link href={"https://github.com/hizkiarss/rooms_frontend"} target={"blank"}
                                               rel={"noopener noreferrer"}>
                                             <Buttons content={"Frontend repository"}
-                                                     className={"font-Aeonik whitespace-nowrap border-none"}/>
+                                                     arrowMobile={true}
+                                                     className={"font-Aeonik whitespace-nowrap md:border-none rounded-xl text-[10px] md:text-base px-2 "}/>
                                         </Link>
                                         <Link href={"https://github.com/hizkiarss/rooms-backend"} target={"blank"}
                                               rel={"noopener noreferrer"}>
                                             <Buttons content={"Backend repository"}
-                                                     className={"font-Aeonik whitespace-nowrap border-none"}/>
+                                                     arrowMobile={true}
+                                                     className={"font-Aeonik whitespace-nowrap md:border-none rounded-xl text-[10px] md:text-base px-2 "}/>
                                         </Link>
 
+                                        <div className={"md:hidden flex justify-end items-center"}>
+                                            <Link href="https://rooms-hizkia-sihombings-projects.vercel.app/"
+                                                  target="_blank"
+                                                  rel="noopener noreferrer" className={"w-fit "}>
+                                                <Buttons content={"Visit"}
+                                                         arrowSmall={true}
+                                                         className={"bg-white text-black md:text-4xl px-4 py-1 rounded-xl mt-0 "}
+                                                />
+                                            </Link>
+                                        </div>
                                     </div>
+
                                 </div>
 
                             </div>
@@ -111,59 +133,81 @@ const Projects = () => {
 
                 <AccordionItem value="item-2">
                     <AccordionTrigger>
-                        <div className={" text-5xl flex py-8 gap-2"}>
+                        <div className={"text-2xl md:text-5xl flex py-3 md:py-8 gap-2"}>
                             <p>02.</p>
                             <p>Gelitix</p>
                         </div>
-                        <div className={"font-bold font-Helvetica border-2 rounded-full px-6 py-3  "}>
+                        <div
+                            className={"text-[7px] md:text-base font-bold font-Helvetica border-2 rounded-full px-2 py-1 md:px-6 md:py-3  "}>
                             TICKET WEBSITE
                         </div>
                     </AccordionTrigger>
+
                     <AccordionContent>
                         <Image
-                            alt={"roomsBg"}
+                            alt={"gelitixBg.jpg"}
                             src={gelitixBg}
-                            className={"rounded-t-3xl h-96 w-full flex items-center justify-center  object-cover"}>
+                            className={"rounded-t-3xl h-48 md:h-96 w-full flex items-center justify-center  object-cover"}>
                         </Image>
 
 
                         <div className={""}>
                             <div>
-                                <div className={"mt-8 flex justify-between items-center"}>
-                                    <p className={"w-1/2 font-Aeonik text-base"}> An event management platform that lets
+                                <div className={"mt-8 md:flex justify-between items-center"}>
+                                    <p className={"text-xs md:w-1/2 font-Aeonik md:text-base"}>
+                                        An event management platform that lets
                                         users
                                         discover, organize, and join events. It features secure ticketing, promotions,
                                         referral rewards, and dashboards with stats, ensuring a seamless, responsive
                                         experience.</p>
-                                    <Link href={"https://gelitix-frontend-seven.vercel.app/"} target={"blank"}
-                                          rel={"noopener noreferrer"}>
-                                        <Buttons content={"Visit"} className={"text-4xl "} noArrow={true}/>
-                                    </Link>
+
+                                    <div className={"hidden md:flex justify-end"}>
+                                        <Link href="https://rooms-hizkia-sihombings-projects.vercel.app/"
+                                              target="_blank"
+                                              rel="noopener noreferrer" className={"w-fit "}>
+                                            <Buttons content={"Visit"}
+                                                     className={"text-lg md:text-4xl px-4 py-1 rounded-xl mt-4 md:mt-0 "}
+                                                     noArrow={true}/>
+                                        </Link>
+                                    </div>
                                 </div>
 
-                                <div className={"flex justify-between mt-6 w-full"}>
-                                    <div className={"flex gap-2"}>
+
+                                <div className={"md:flex justify-between mt-6 w-full"}>
+                                    <div className={"flex flex-wrap md:w-full gap-x-1 gap-y-1  md:flex md:gap-2 "}>
                                         <Logo img={typescriptLogo} name={"TypeScript"}/>
                                         <Logo img={nextLogo} name={"Next.js"}/>
                                         <Logo img={postgreLogo} name={"PostGreSQL"}/>
                                         <Logo img={springBootLogo} name={"Spring Boot"}/>
                                     </div>
 
-                                    <div className={" gap-2 mt-4 flex "}>
-                                        <Link href={"https://github.com/Gelitix/gelitix_frontend"} target={"blank"}
+
+                                    <div className={"gap-2 mt-4 flex items-center "}>
+                                        <Link href={"https://github.com/hizkiarss/rooms_frontend"} target={"blank"}
                                               rel={"noopener noreferrer"}>
                                             <Buttons content={"Frontend repository"}
-                                                     className={"font-Aeonik whitespace-nowrap border-none"}/>
+                                                     arrowMobile={true}
+                                                     className={"font-Aeonik whitespace-nowrap md:border-none rounded-xl text-[10px] md:text-base px-2 "}/>
                                         </Link>
-
-                                        <Link href={"https://github.com/Gelitix/gelitix_backend"} target={"blank"}
+                                        <Link href={"https://github.com/hizkiarss/rooms-backend"} target={"blank"}
                                               rel={"noopener noreferrer"}>
                                             <Buttons content={"Backend repository"}
-                                                     className={"font-Aeonik whitespace-nowrap border-none"}/>
+                                                     arrowMobile={true}
+                                                     className={"font-Aeonik whitespace-nowrap md:border-none rounded-xl text-[10px] md:text-base px-2 "}/>
                                         </Link>
 
-
+                                        <div className={"md:hidden flex justify-end items-center"}>
+                                            <Link href="https://rooms-hizkia-sihombings-projects.vercel.app/"
+                                                  target="_blank"
+                                                  rel="noopener noreferrer" className={"w-fit "}>
+                                                <Buttons content={"Visit"}
+                                                         arrowSmall={true}
+                                                         className={"bg-white text-black md:text-4xl px-4 py-1 rounded-xl mt-0 "}
+                                                />
+                                            </Link>
+                                        </div>
                                     </div>
+
                                 </div>
 
                             </div>
@@ -174,61 +218,83 @@ const Projects = () => {
 
                         </div>
 
-
                     </AccordionContent>
+
 
                 </AccordionItem>
 
                 <AccordionItem value="item-3">
-                    <AccordionTrigger>
-                        <div className={"text-5xl flex py-8 gap-2"}>
-                            <p>03.</p>
-                            <p>MSA Agency</p>
-                        </div>
 
-                        <div className={"font-bold font-Helvetica border-2 rounded-full px-6 py-3  "}>
+
+                    <AccordionTrigger>
+                        <div className={"text-2xl md:text-5xl flex py-3 md:py-8 gap-2"}>
+                            <p>03.</p>
+                            <p className={"flex gap-3"}>MSA <span className={"md:flex hidden"}>Agency</span></p>
+                        </div>
+                        <div
+                            className={"text-[7px] md:text-base font-bold font-Helvetica border-2 rounded-full px-2 py-1 md:px-6 md:py-3  "}>
                             COMPANY PROFILE WEBSITE
                         </div>
                     </AccordionTrigger>
+
+
                     <AccordionContent>
                         <Image
-                            alt={"roomsBg"}
+                            alt={"gelitixBg.jpg"}
                             src={mscBg}
-                            className={"rounded-t-3xl h-96 w-full flex items-center justify-center  object-cover"}>
+                            className={"rounded-t-3xl h-48 md:h-96 w-full flex items-center justify-center  object-cover"}>
                         </Image>
 
 
                         <div className={""}>
-
                             <div>
-                                <div className={"mt-8 flex justify-between items-center"}>
-                                    <p className={"w-1/2 font-Aeonik text-base"}> A responsive company profile website
-                                        that
-                                        showcases the brand’s mission, services, and team. It features a homepage with
-                                        key highlights, an About Us page with history and culture, a Products page with
-                                        offerings and reviews, and a team members page via API.</p>
+                                <div className={"mt-8 md:flex justify-between items-center"}>
+                                    <p className={"text-xs md:w-1/2 font-Aeonik md:text-base"}>
+                                        A responsive company profile website that showcases the brand’s mission,
+                                        services, and team. It features a homepage with key highlights, an About Us page
+                                        with history and culture, a Products page with offerings and reviews, and a team
+                                        members page via API.</p>
 
-                                    <Link href={"https://msa-agency.vercel.app/"} target={"blank"}
-                                          rel={"noopener noreferrer"}>
-                                        <Buttons content={"Visit"} className={"text-4xl "} noArrow={true}/>
-                                    </Link>
-
+                                    <div className={"hidden md:flex justify-end"}>
+                                        <Link href="https://rooms-hizkia-sihombings-projects.vercel.app/"
+                                              target="_blank"
+                                              rel="noopener noreferrer" className={"w-fit "}>
+                                            <Buttons content={"Visit"}
+                                                     className={"text-lg md:text-4xl px-4 py-1 rounded-xl mt-4 md:mt-0 "}
+                                                     noArrow={true}/>
+                                        </Link>
+                                    </div>
                                 </div>
 
 
-                                <div className={"flex justify-between mt-6 w-full"}>
-                                    <div className={"flex gap-2"}>
+                                <div className={"md:flex justify-between mt-6 w-full"}>
+                                    <div className={"flex flex-wrap md:w-full gap-x-1 gap-y-1  md:flex md:gap-2 "}>
                                         <Logo img={typescriptLogo} name={"TypeScript"}/>
                                         <Logo img={nextLogo} name={"Next.js"}/>
                                     </div>
 
-                                    <div className={" gap-2 mt-4 flex "}>
+
+                                    <div className={"gap-2 mt-4 flex items-center "}>
                                         <Link href={"https://github.com/hizkiarss/MSA-Agency"} target={"blank"}
                                               rel={"noopener noreferrer"}>
                                             <Buttons content={"Repository"}
-                                                     className={"font-Aeonik whitespace-nowrap border-none"}/>
+                                                     arrowMobile={true}
+                                                     className={"font-Aeonik whitespace-nowrap md:border-none rounded-xl text-[10px] md:text-base px-2 "}/>
                                         </Link>
+
+
+                                        <div className={"md:hidden flex justify-end items-center"}>
+                                            <Link href="https://msa-agency.vercel.app/"
+                                                  target="_blank"
+                                                  rel="noopener noreferrer" className={"w-fit "}>
+                                                <Buttons content={"Visit"}
+                                                         arrowSmall={true}
+                                                         className={"bg-white text-black md:text-4xl px-4 py-1 rounded-xl mt-0 "}
+                                                />
+                                            </Link>
+                                        </div>
                                     </div>
+
                                 </div>
 
                             </div>
@@ -239,8 +305,8 @@ const Projects = () => {
 
                         </div>
 
-
                     </AccordionContent>
+
 
                 </AccordionItem>
             </Accordion>
