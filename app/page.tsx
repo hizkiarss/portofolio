@@ -41,10 +41,7 @@ const Page = () => {
 
 
                     <div style={{ contain: 'paint' }}>
-
                         <div className="relative min-h-[140svh] sm:min-h-[160svh] lg:min-h-[180svh]">
-
-                            {/* Sticky video — always fills the visible viewport */}
                             <div className="sticky top-0 h-svh w-full overflow-hidden z-0">
                                 <video
                                     src="/video/gotap-app.mp4"

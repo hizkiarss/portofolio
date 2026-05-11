@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import scrollTo from "@/utils/scrollTo";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -156,7 +157,7 @@ const PanelImages = ({ images, layout }: { images: PanelImage[]; layout: PanelDa
 
 const Panel = ({ panel }: { panel: PanelData }) => (
     <div className="panel w-screen md:w-[1000px] mx-0 md:mx-2 px-2 md:px-6 py-6 rounded-xl">
-        <div className="text-4xl bg-[#F0F0F0] p-4 rounded-xl">
+        <div onClick={() => scrollTo('works')} className="text-4xl bg-[#F0F0F0] p-4 rounded-xl">
             <PanelImages images={panel.images} layout={panel.layout} />
             <div className="mt-4 flex flex-col md:flex-row md:gap-20 items-start md:items-center">
                 <div className="flex gap-2 items-center leading-[0.95]">
@@ -230,7 +231,8 @@ const HorizontalCarousel = () => {
     }, []);
 
     return (
-        <div className="relative hidden xl:block mt-10">
+        <div className="relative hidden xl:block tall:xl:hidden mt-10"
+        >
             <div
                 ref={containerRef}
                 className="relative w-full md:overflow-hidden flex flex-col justify-start mt-0 md:mt-20 mt:pl-10"

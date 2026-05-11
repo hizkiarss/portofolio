@@ -9,38 +9,18 @@ const LoadingOverlay = () => {
     const [animateOut, setAnimateOut] = useState(false);
 
     useEffect(() => {
-        const triggerExit = () => {
+        const handleLoad = () => {
             setAnimateOut(true);
             setTimeout(() => setIsVisible(false), 1000);
         };
 
-        const checkProgress = () => {
-            const resources = performance.getEntriesByType('resource');
-            if (resources.length === 0) return false;
-
-            const loaded = resources.filter(r => r.duration > 0).length;
-            const progress = loaded / resources.length;
-
-            return progress >= 0.6;
-        };
-
-        // Poll until 60% of resources are loaded
-        const interval = setInterval(() => {
-            if (checkProgress()) {
-                clearInterval(interval);
-                triggerExit();
-            }
-        }, 100);
-
-        // Fallback: clear on full load regardless
-        const handleLoad = () => {
-            clearInterval(interval);
-            triggerExit();
-        };
-        window.addEventListener('load', handleLoad);
+        if (document.readyState === 'complete') {
+            handleLoad(); // If already loaded
+        } else {
+            window.addEventListener('load', handleLoad);
+        }
 
         return () => {
-            clearInterval(interval);
             window.removeEventListener('load', handleLoad);
         };
     }, []);

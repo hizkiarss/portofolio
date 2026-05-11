@@ -45,32 +45,34 @@ const Cta = () => {
             id="contact"
         >
             <div
-                className='relative flex flex-col justify-between items-center group h-[600px] md:h-[500px] lg:h-[600px] overflow-hidden'>
+                className='flex flex-col justify-between items-center group  overflow-hidden '>
                 <p className='text-[20px] z-20'>Big ideas need bold support.</p>
 
-                <p className={`text-[50px] rotate-3 md:rotate-0 transition-all duration-1000 tracking-tighter w-fit absolute top-16 md:top-48 px-4 lg:left-28 md:left-4 z-20 ${isVisible ? "opacity-100" : "opacity-0"}`}>
-                    call
-                </p>
+               <div className={"relative h-[300px] md:h-[400px]  w-full"}>
+                   <p className={`text-[50px] rotate-3 md:rotate-0 transition-all duration-1000 tracking-tighter w-fit absolute lg:left-10 xl:left-20  top-4 md:top-48 px-4 z-20 ${isVisible ? "opacity-100" : "opacity-0"}`}>
+                       call
+                   </p>
+
+                   <div
+                       className={`w-full overflow-x-hidden bg-white absolute  transform  z-10 flex justify-center transition-all duration-1000 
+                    ${isVisible ? "bottom-20 md:bottom-16 lg:bottom-0 " : "-bottom-32"}`}
+                   >
+                       <Image
+                           width={250}
+                           height={250}
+                           src="/photos/logoBottom.png"
+                           className='w-[350px] md:w-[530px] lg:w-[800px] object-cover'
+                           alt=''
+                       />
+                   </div>
+
+                   <p className={`text-[50px] -rotate-6 md:rotate-0 transition-all duration-1000 tracking-tighter absolute bottom-4 right-0 md:top-48 px-4 md:right-3 lg:right-10 xl:right-20 z-20 ${isVisible ? "opacity-100" : "opacity-0"}`}>
+                       now.
+                   </p>
+               </div>
 
                 <div
-                    className={`w-[450px] md:w-[700px] lg:w-[800px] xl:w-[1140px] overflow-x-hidden bg-white absolute  transform  z-10 flex justify-center transition-all duration-1000 
-                    ${isVisible ? "bottom-80 md:bottom-32 lg:bottom-44 xl:bottom-40" : "-bottom-32"}`}
-                >
-                    <Image
-                        width={250}
-                        height={250}
-                        src="/photos/logoBottom.png"
-                        className='w-[350px] md:w-[450px] lg:w-[800px] object-cover'
-                        alt=''
-                    />
-                </div>
-
-                <p className={`text-[50px] -rotate-6 md:rotate-0 transition-all duration-1000 tracking-tighter absolute bottom-[260px] md:top-48 px-4 md:right-3 lg:right-28 z-20 ${isVisible ? "opacity-100" : "opacity-0"}`}>
-                    now.
-                </p>
-
-                <div
-                    className={`flex md:flex-row flex-col justify-between gap-2 md:gap-6 lg:gap-10 w-full md:mt-0 md:mb-10 lg:mt-10 lg:mb-10 transition-all duration-1000 
+                    className={`flex lg:flex-row flex-col justify-between lg:gap-10 w-full md:mt-0 md:mb-10 lg:mt-10 lg:mb-10 transition-all duration-1000 
                     ${isVisible ? "opacity-100" : "opacity-0"}`}
                 >
                     <Link

@@ -8,10 +8,11 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel"
-import SeeMoreButton from '@/components/seeMoreButton'
+// import SeeMoreButton from '@/components/seeMoreButton'
 import Image from 'next/image'
 import {Badge} from "@/components/ui/badge"
 import Autoplay from "embla-carousel-autoplay"
+import {getLenis} from "@/hooks/useLenis";
 
 const ImageCarousel = () => {
     const plugin = React.useRef(
@@ -23,20 +24,20 @@ const ImageCarousel = () => {
         {
             id: 1,
             image: "/photos/Social Media Creative Porto 1.png",
-            alt: 'GOTAP-REPUTATION',
-            badges: ['Social Media Management', 'Website Development']
+            alt: 'GOTAP Reputation',
+            badges: ['GOTAP Reputation', 'Review Management App']
         },
         {
             id: 2,
             image: "/photos/nomad-showcase.webp",
-            alt: 'Social Media Creative Portfolio 2',
-            badges: ['Social Media Management', 'Website Development']
+            alt: 'Nomad Archipelago Portfolio',
+            badges: ['Nomad Archipelago', 'Company Profile Website']
         },
         {
             id: 3,
             image: "/photos/rooms-showcase.webp",
-            alt: 'Social Media Creative Portfolio 3',
-            badges: ['Social Media Management', 'Website Development']
+            alt: 'Rooms',
+            badges: ['Rooms', 'Booking Management App']
         }
     ]
 
@@ -74,7 +75,7 @@ const ImageCarousel = () => {
                                 </Badge>
                             ))}
 
-                            <SeeMoreButton/>
+                            {/*<SeeMoreButton/>*/}
                         </CarouselItem>
                     ))}
                 </CarouselContent>

@@ -124,7 +124,7 @@ const ProjectRow = ({project, onWrapperMount}: ProjectRowProps) => {
 
     return (
         <div className="mt-10 first:mt-0 flex flex-col md:flex-row xl:gap-10 ">
-            <div className="flex flex-col justify-start xl:justify-between w-full xl:w-3/5">
+            <div className="flex flex-col justify-start xl:justify-between w-full xl:w-1/2">
                 <div>
                     <h3 className="flex-1 tracking-tighter leading-7 text-3xl text-gray-500">
                         <span className="text-black">{title}:</span>
@@ -132,7 +132,7 @@ const ProjectRow = ({project, onWrapperMount}: ProjectRowProps) => {
                         {subtitle}
                     </h3>
 
-                    </div>
+                </div>
 
 
                 {/* Tablet image (md only) */}
@@ -145,21 +145,32 @@ const ProjectRow = ({project, onWrapperMount}: ProjectRowProps) => {
 
 
                 <div>
-                    <ToolBadges tools={tools}/>
 
                     <p className="text-sm tracking-tight mt-6 mb-2 md:mb-0 xl:mt-4">
                         {description}
                     </p>
+                    <div className={"hidden md:block xl:hidden"}>
+                        <ToolBadges tools={tools}/>
+
+                    </div>
+
                 </div>
 
 
             </div>
 
-            <div
-                ref={onWrapperMount}
-                className="relative block md:hidden xl:block overflow-hidden w-full h-[500px]"
-            >
-                {sharedImage}
+
+            <div className={"w-full flex md:hidden xl:flex xl:w-1/2  flex-col"}>
+                <div
+                    ref={onWrapperMount}
+                    className="order-2 lg:order-1 relative block md:hidden xl:block overflow-hidden w-full h-[500px] min-h-[200px]"
+                >
+                    {sharedImage}
+                </div>
+
+                <div className={"order-1 mb-6 lg:mb-0 lg:order-2"}>
+                    <ToolBadges tools={tools}/>
+                </div>
             </div>
         </div>
     )
@@ -198,8 +209,8 @@ const Website = () => {
     }, [])
 
     return (
-        <div
-            className="flex flex-col md:flex-row justify-between mt-20 gap-10 md:gap-20 px-4 md:px-6 xl:px-0 xl:gap-16 relative">
+        <div id={"works"}
+             className="flex flex-col md:flex-row justify-between mt-20 gap-10 md:gap-20 px-4 md:px-6 xl:px-0 xl:gap-16 relative">
             {/* Sticky sidebar */}
             <div className="md:sticky md:top-36 xl:top-12 self-start h-fit max-w-[200px]">
                 <p className="tracking-tighter text-[40px] md:text-[50px] -mt-6">see the</p>
@@ -214,7 +225,7 @@ const Website = () => {
             </div>
 
             {/* Project list */}
-            <div className="flex flex-col gap-10 flex-1">
+            <div className="flex flex-col gap-24 flex-1">
                 {PROJECTS.map((project) => (
                     <ProjectRow
                         key={project.title}

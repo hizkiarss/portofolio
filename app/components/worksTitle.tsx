@@ -2,6 +2,7 @@
 
 import Buttons from '@/components/buttons';
 import React, {useRef, useEffect} from 'react';
+import scrollTo from "@/utils/scrollTo";
 
 const WorksTitle = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -14,8 +15,9 @@ const WorksTitle = () => {
         return () => clearTimeout(timer);
     }, []);
 
+
     return (
-        <div id={"works"}
+        <div
              className=' md:h-fit xl:min-h-[560px] xl:max-h-[900px] xl:h-screen  xl:justify-start  xl:pt-0  relative flex flex-col px-4 md:px-6 xl:px-0 mt-20'>
             <div className='items-center justify-between z-10 px-2'>
                 <h2 className="relative tracking-tighter text-[40px] md:text-[50px] mt-0 lg:mt-8 font-Aeonik">
@@ -42,7 +44,7 @@ const WorksTitle = () => {
                         for
                         small and growing businesses.
                     </p>
-                    <Buttons content='Explore more' className='mt-4 lg:mt-10'></Buttons>
+                    <Buttons onClick={() => scrollTo('contact')} content='Explore more' className='mt-4 lg:mt-10'></Buttons>
                 </div>
 
             </div>

@@ -4,7 +4,7 @@ import {goToDiv} from "@/utils/goToContact";
 import Image from "next/image";
 import DenpasarClock from '@/utils/denpasarClock';
 import Link from "next/link";
-import {getLenis} from '@/hooks/useLenis'
+import scrollTo from "@/utils/scrollTo";
 
 
 const Navbar = () => {
@@ -13,13 +13,10 @@ const Navbar = () => {
     const subject = "Hello!";
     const body = "Hello, I’m interested in working together on a project.";
     const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    const scrollTo = (id: string) => {
-        const target = document.getElementById(id)
-        if (target) getLenis()?.scrollTo(target, {duration: 1.6})
-    }
+
     return (
         <nav
-            className="mt-0 hidden xl:flex md:py-10 text-xs md:text-base max-h-[900px] h-screen flex-col justify-between !sticky top-0 !w-[86px] z-10 bg-white ">
+            className="mt-0 hidden xl:flex md:py-10 text-xs md:text-base  h-screen flex-col justify-between !sticky top-0 !w-[86px] z-10 bg-white ">
             <div className={"flex flex-col items-start"}>
                 <a href={"/"}>
                     <Image src="/logo/logo.svg" alt="logo" width={0} height={0} className="w-[68px]"/>

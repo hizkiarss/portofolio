@@ -12,27 +12,27 @@ const Hero = () => {
     const videos = [
         {
             src: "/video/gotap-app.mp4",
-            title: "Instagram Post Design",
+            title: "Frontend Engineering",
             poster: "photos/gotap-app-cover.webp"
         },
         {
             src: "/video/gotap-reputation-video.mp4",
-            title: "Campaign Visuals",
+            title: "Responsive Development",
             poster: "photos/gotap-reputation-cover.webp"
         },
         {
             src: "/video/monte-carlo-property-website-video.mp4",
-            title: "Story Highlight",
+            title: "Performance Optimization    ",
             poster: "photos/monte-carlo-property-website-cover.webp"
         },
         {
             src: "/video/nomad-archipelago.mp4",
-            title: "Client Brand Pack",
+            title: "API Integration",
             poster: "photos/nomad-archipelago-cover.webp"
         },
         {
             src: "/video/rooms-dark.mp4",
-            title: "Minimal Layout Set",
+            title: "Interactive Experiences",
             poster: "photos/rooms-dark-cover.webp"
         },
     ];
@@ -42,7 +42,7 @@ const Hero = () => {
 
     return (
         <div
-            className="mt-[20px] md:mb-0 md:mt-10  md:h-[80vh] xl:min-h-[560px] xl:max-h-[900px] xl:h-screen flex flex-col justify-start  mx-4 relative   ">
+            className="md:mb-0 md:pt-10 xl:max-h-[800px] xl:h-svh flex flex-col justify-start mx-4 relative">
             <FadeInAnimation scroll={false} delay={0.7}>
                 <div className={"items-center lg:grid grid-cols-6"}>
                     <div className={"col-span-4"}>
@@ -51,8 +51,6 @@ const Hero = () => {
                                 <Image src="/photos/Kia.webp" width={100} height={100} alt=""
                                        className={`relative z-20 border-black rounded-full w-24 md:w-32 xl:w-44 md:mt-0  ${hoveredIndex != null ? "filter blur-sm" : "opacity-100"}`}/>
                             </div>
-
-
                             <h1
                                 className={`tracking-tighter leading-[80px] text-[80px] md:text-[100px] font-Aeonik md:-ml-3 ${
                                     hoveredIndex != null ? "filter blur-sm" : "opacity-100"
@@ -68,7 +66,7 @@ const Hero = () => {
                     </div>
 
                     <div
-                        className={"col-span-2 mt-4   text-xs md:text-[15px] flex flex-col md:flex-row md:gap-14 lg:gap-1 md:items-center lg:items-start lg:flex-col  gap-4 font-Helvetica md:leading-6"}>
+                        className={"col-span-2 mt-8 text-xs md:text-[15px] flex flex-col md:flex-row md:gap-14 lg:gap-1 md:items-center lg:items-start lg:flex-col  gap-4 font-Helvetica md:leading-6"}>
                         <p className={`${
                             hoveredIndex != null ? "filter blur-sm" : "opacity-100"
                         }`}>I'm Hizkia Sihombing, a full-stack software engineer specializing in building dynamic web
@@ -84,7 +82,7 @@ const Hero = () => {
             </FadeInAnimation>
 
 
-            <div className="hidden absolute bottom-20 left-0 right-0 xl:flex justify-between items-end z-30">
+            <div className="hidden absolute bottom-0 left-0 right-0 xl:flex justify-between items-end z-30 gap-1">
                 {videos.map((video, idx) => (
                     <HoverVideo
                         key={idx}

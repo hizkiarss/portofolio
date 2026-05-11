@@ -8,7 +8,7 @@ import BlurText from './blurText';
 const WhyHire = () => {
     return (
         <div>
-            <div className="relative mt-12 h-[400px] md:h-screen md:flex items-start md:items-center justify-center ">
+            <div className="relative mt-12 h-[400px] md:h-[1100px]  md:flex items-start md:items-center justify-center ">
 
                 <div
                     className="bg-[url('/photos/hirebackground.svg')] bg-contain bg-no-repeat bg-center text-5xl  md:text-8xl md:h-3/5 w-full h-full relative ">

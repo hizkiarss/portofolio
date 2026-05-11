@@ -65,7 +65,7 @@ const Faq = () => {
                     <p className='gap-6'><span className='font-Edwardian tracking-wide text-[90px]'>ask</span> away&mdash;
                     </p></FadeInAnimation>
                 <FadeInAnimation scroll={true} vertical={true} delay={0.8}>
-                    <p className='-mt-9 lg:-mt-10 leading-[50px] '>we &apos; re here <span className={'-mt-12'}>to<span className='font-Edwardian tracking-wide text-[90px] ml-3'>help</span></span>.</p>
+                    <p className='-mt-9 lg:-mt-10 leading-[50px] '>I&apos;m here <span className={'-mt-12'}>to<span className='font-Edwardian tracking-wide text-[90px] ml-3'>help</span></span>.</p>
                 </FadeInAnimation>
             </div>
 

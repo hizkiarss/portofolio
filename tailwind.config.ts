@@ -16,7 +16,8 @@ const config: Config = {
 				Aeonik: ['Aeonik']
 			},
 			screens: {
-				mon: '1900px'
+				mon: '1900px',
+				'tall': { 'raw': '(min-height: 800px)' },
 			},
 			colors: {
 				background: 'hsl(var(--background))',
