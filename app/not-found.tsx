@@ -22,7 +22,7 @@ export default function NotFound() {
     }, []);
 
     return (
-        <div className="min-h-screen h-screen flex items-center justify-center relative bg-transparent overflow-hidden">
+        <div className="max-h-[900px] h-screen flex items-center justify-center relative bg-transparent overflow-hidden">
             <ImageTrail
                 items={[
                     'https://picsum.photos/id/287/300/300',

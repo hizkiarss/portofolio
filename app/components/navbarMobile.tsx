@@ -20,7 +20,7 @@ const NavbarMobile = () => {
   flex justify-between items-center 
   w-screen pl-0 px-2 py-6
   sticky top-0 z-40
-  bg-gradient-to-t from-white/0 via-white/90 to-white/100
+  bg-gradient-to-t from-white/0 via-white/80 to-white/100
 '>
             <a href={"/"}>
                 {/* Tablet */}
@@ -34,7 +34,7 @@ const NavbarMobile = () => {
 
                 {/* Mobile */}
                 <Image
-                    src="/photos/Kia-mobile.webp"
+                    src="/photos/pp.png"
                     width={100}
                     height={100}
                     alt=""

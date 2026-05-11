@@ -15,7 +15,8 @@ const WorksTitle = () => {
     }, []);
 
     return (
-        <div id={"works"} className=' md:h-fit xl:h-screen  xl:justify-start  xl:pt-0  relative flex flex-col px-4 md:px-6 xl:px-0 mt-20'>
+        <div id={"works"}
+             className=' md:h-fit xl:min-h-[560px] xl:max-h-[900px] xl:h-screen  xl:justify-start  xl:pt-0  relative flex flex-col px-4 md:px-6 xl:px-0 mt-20'>
             <div className='items-center justify-between z-10 px-2'>
                 <h2 className="relative tracking-tighter text-[40px] md:text-[50px] mt-0 lg:mt-8 font-Aeonik">
             <span

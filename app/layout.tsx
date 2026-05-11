@@ -3,6 +3,7 @@ import "./globals.css";
 import LoadingOverlay from "./components/loadingOverlay";
 import SmoothScroll from "./components/smoothScroll";
 import ClientOnly from "./components/clientOnly";
+import { TooltipProvider } from "@/components/ui/tooltip"
 
 export const metadata: Metadata = {
     title: "Hizkia Sihombing - Digital Design & Development",
@@ -21,7 +22,7 @@ export default function RootLayout({
         <ClientOnly>
             <SmoothScroll/>
         </ClientOnly>
-        {children}
+        <TooltipProvider>{children}</TooltipProvider>
 
 
         </body>

@@ -40,11 +40,12 @@ const Page = () => {
                     <Website/>
 
 
-                    <div style={{contain: 'paint'}}>
+                    <div style={{ contain: 'paint' }}>
 
-                        <div className="relative min-h-[160svh]">
+                        <div className="relative min-h-[140svh] sm:min-h-[160svh] lg:min-h-[180svh]">
 
-                            <div className="sticky top-0 h-[100svh] w-full overflow-hidden z-0">
+                            {/* Sticky video — always fills the visible viewport */}
+                            <div className="sticky top-0 h-svh w-full overflow-hidden z-0">
                                 <video
                                     src="/video/gotap-app.mp4"
                                     className="w-full h-full object-cover"
@@ -56,9 +57,9 @@ const Page = () => {
                             </div>
 
                             <div className="absolute inset-0 z-10 flex flex-col pointer-events-none">
-                                <div className="bg-white h-[clamp(60px,20svh,140px)]"/>
-                                <div className="flex-1 bg-transparent"/>
-                                <div className="bg-white h-[clamp(60px,20svh,140px)]"/>
+                                <div className="bg-white h-[clamp(48px,12svh,160px)]" />
+                                <div className="flex-1 bg-transparent" />
+                                <div className="bg-white h-[clamp(48px,12svh,160px)]" />
                             </div>
 
                         </div>
