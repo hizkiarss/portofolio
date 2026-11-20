@@ -6,6 +6,18 @@ import React, {useState, useEffect} from "react";
 import Image from "next/image";
 import Buttons from "@/components/buttons";
 
+// Photos from /public that pop up along the mouse trail.
+const TRAIL_IMAGES = [
+    "/photos/gotap-app-cover.webp",
+    "/photos/rooms-dark-cover.webp",
+    "/photos/nomad-archipelago-cover.webp",
+    "/photos/gotap-reputation-cover.webp",
+    "/photos/monte-carlo-property-website-cover.webp",
+    "/photos/rooms-airbnb.webp",
+    "/photos/ai-integration.webp",
+    "/photos/gotap-code.webp",
+];
+
 export default function NotFound() {
     const [isVisible, setIsVisible] = useState(false);
     const email = "hizkiarssihombing@gmail.com";
@@ -24,40 +36,31 @@ export default function NotFound() {
     return (
         <div className="min-h-screen h-screen flex items-center justify-center relative bg-transparent overflow-hidden">
             <ImageTrail
-                items={[
-                    'https://picsum.photos/id/287/300/300',
-                    'https://picsum.photos/id/1001/300/300',
-                    'https://picsum.photos/id/1025/300/300',
-                    'https://picsum.photos/id/1026/300/300',
-                    'https://picsum.photos/id/1027/300/300',
-                    'https://picsum.photos/id/1028/300/300',
-                    'https://picsum.photos/id/1029/300/300',
-                    'https://picsum.photos/id/1030/300/300',
-                ]}
+                items={TRAIL_IMAGES}
                 variant={1}
             />
 
             <div
-                className="font-Aeonik w-full max-w-[100%] sm:max-w-[600px] md:max-w-[800px] lg:max-w-[1100px] mt-[4%] pointer-events-auto text-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-transparent px-4"
+                className="font-Aeonik w-full max-w-[100%] sm:max-w-[37.5rem] md:max-w-[50rem] lg:max-w-[68.75rem] mt-[4%] pointer-events-auto text-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-transparent px-4"
                 id="contact"
             >
-                <div className='relative flex flex-col items-center justify-end min-h-[500px] sm:min-h-[550px] md:h-[600px]'>
+                <div className='relative flex flex-col items-center justify-end min-h-[31.25rem] sm:min-h-[34.375rem] md:h-[37.5rem]'>
                     <div
-                        className={`w-full max-w-[350px] sm:max-w-[500px] md:max-w-[700px] lg:max-w-[1140px] bg-transparent transform flex justify-center transition-all duration-1000 absolute
-                        ${isVisible ? "bottom-[320px] sm:bottom-56 md:bottom-64 lg:bottom-72 opacity-100" : "-bottom-32 opacity-0"}`}
+                        className={`w-full max-w-[21.875rem] sm:max-w-[31.25rem] md:max-w-[43.75rem] lg:max-w-[71.25rem] bg-transparent transform flex justify-center transition-all duration-1000 absolute
+                        ${isVisible ? "bottom-[20rem] sm:bottom-56 md:bottom-64 lg:bottom-72 opacity-100" : "-bottom-32 opacity-0"}`}
                     >
                         <Image
                             src={"/photos/GalihClear.png"}
                             width={600}
                             height={500}
                             alt={""}
-                            className={`rounded-full scale-x-[-1] md:scale-x-100 w-[70px] sm:w-[150px] md:w-[180px] lg:w-[200px] rotate-3 md:rotate-12 lg:rotate-18 transition-all duration-1000 absolute top-40 sm:top-12 md:top-32 lg:top-48 -left-0 sm:left-8 md:left-12 lg:left-16 ${isVisible ? "opacity-100" : "opacity-0"}`}
+                            className={`rounded-full scale-x-[-1] md:scale-x-100 w-[4.375rem] sm:w-[9.375rem] md:w-[11.25rem] lg:w-[12.5rem] rotate-3 md:rotate-12 lg:rotate-18 transition-all duration-1000 absolute top-40 sm:top-12 md:top-32 lg:top-48 -left-0 sm:left-8 md:left-12 lg:left-16 ${isVisible ? "opacity-100" : "opacity-0"}`}
                         />
                         <Image
                             width={600}
                             height={500}
                             src="/photos/404c.png"
-                            className='w-full max-w-[300px] sm:max-w-[400px] md:max-w-[550px] lg:max-w-[700px] object-contain'
+                            className='w-full max-w-[18.75rem] sm:max-w-[25rem] md:max-w-[34.375rem] lg:max-w-[43.75rem] object-contain'
                             alt='404 Error'
                         />
                         <Image
@@ -65,21 +68,12 @@ export default function NotFound() {
                             width={600}
                             height={500}
                             alt={""}
-                            className={`w-[70px] scale-x-[-1] md:scale-x-100  sm:w-[130px] md:w-[160px] lg:w-[180px] rounded-full rotate-0 md:rotate-6 lg:rotate-10 transition-all duration-1000 tracking-tighter absolute top-[165px] sm:top-24 md:top-16 lg:top-12 -right-0 sm:right-8 md:right-12 lg:right-20 ${isVisible ? "opacity-100" : "opacity-0"}`}
+                            className={`w-[4.375rem] scale-x-[-1] md:scale-x-100  sm:w-[8.125rem] md:w-[10rem] lg:w-[11.25rem] rounded-full rotate-0 md:rotate-6 lg:rotate-10 transition-all duration-1000 tracking-tighter absolute top-[10.3125rem] sm:top-24 md:top-16 lg:top-12 -right-0 sm:right-8 md:right-12 lg:right-20 ${isVisible ? "opacity-100" : "opacity-0"}`}
                         />
 
                         <ImageTrail
                             z={"z-20"}
-                            items={[
-                                'https://picsum.photos/id/287/300/300',
-                                'https://picsum.photos/id/1001/300/300',
-                                'https://picsum.photos/id/1025/300/300',
-                                'https://picsum.photos/id/1026/300/300',
-                                'https://picsum.photos/id/1027/300/300',
-                                'https://picsum.photos/id/1028/300/300',
-                                'https://picsum.photos/id/1029/300/300',
-                                'https://picsum.photos/id/1030/300/300',
-                            ]}
+                            items={TRAIL_IMAGES}
                             variant={1}
                         />
                     </div>

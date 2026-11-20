@@ -19,14 +19,14 @@ const Page = () => {
 
     return (
         <div className="flex justify-center">
-            <div className="block xl:flex gap-10 max-w-[1280px]">
+            <div className="block xl:flex gap-10 w-full max-w-[80rem]">
 
                 <>
                     <Navbar/>
                     <NavbarMobile/>
                 </>
 
-                <div className="xl:max-w-[1140px] max-w-full">
+                <div className="xl:max-w-[71.25rem] xl:flex-1 xl:min-w-0 max-w-full">
                     <CursorFollower/>
                     <Hero/>
 
@@ -54,9 +54,9 @@ const Page = () => {
                             </div>
 
                             <div className="absolute inset-0 z-10 flex flex-col pointer-events-none">
-                                <div className="bg-white h-[clamp(48px,12svh,160px)]" />
+                                <div className="bg-white h-[clamp(3rem,12svh,10rem)]" />
                                 <div className="flex-1 bg-transparent" />
-                                <div className="bg-white h-[clamp(48px,12svh,160px)]" />
+                                <div className="bg-white h-[clamp(3rem,12svh,10rem)]" />
                             </div>
 
                         </div>

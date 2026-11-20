@@ -35,7 +35,9 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
         if (!el) return;
 
         const axis = direction === "horizontal" ? "x" : "y";
-        const offset = reverse ? -distance : distance;
+        // distance is in design px (at 16px rem); scale it with the fluid rem on large screens.
+        const remScale = (parseFloat(getComputedStyle(document.documentElement).fontSize) || 16) / 16;
+        const offset = (reverse ? -distance : distance) * remScale;
 
         gsap.set(el, {
             [axis]: offset,

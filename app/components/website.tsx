@@ -138,7 +138,7 @@ const ProjectRow = ({project, onWrapperMount}: ProjectRowProps) => {
                 {/* Tablet image (md only) */}
                 <div
                     ref={onWrapperMount}
-                    className="relative mt-4 hidden md:block xl:hidden overflow-hidden w-full h-[500px]"
+                    className="relative mt-4 hidden md:block xl:hidden overflow-hidden w-full h-[31.25rem]"
                 >
                     {sharedImage}
                 </div>
@@ -163,7 +163,7 @@ const ProjectRow = ({project, onWrapperMount}: ProjectRowProps) => {
             <div className={"w-full flex md:hidden xl:flex xl:w-1/2  flex-col"}>
                 <div
                     ref={onWrapperMount}
-                    className="order-2 lg:order-1 relative block md:hidden xl:block overflow-hidden w-full h-[500px] min-h-[200px]"
+                    className="order-2 lg:order-1 relative block md:hidden xl:block overflow-hidden w-full h-[31.25rem] min-h-[12.5rem]"
                 >
                     {sharedImage}
                 </div>
@@ -212,9 +212,9 @@ const Website = () => {
         <div id={"works"}
              className="flex flex-col md:flex-row justify-between mt-20 gap-10 md:gap-20 px-4 md:px-6 xl:px-0 xl:gap-16 relative">
             {/* Sticky sidebar */}
-            <div className="md:sticky md:top-36 xl:top-12 self-start h-fit max-w-[200px]">
-                <p className="tracking-tighter text-[40px] md:text-[50px] -mt-6">see the</p>
-                <p className="font-Edwardian tracking-tight font-medium text-[70px] md:text-[90px] mr-3 relative inline-block transition-all duration-400 -mt-14">
+            <div className="md:sticky md:top-36 xl:top-12 self-start h-fit max-w-[12.5rem]">
+                <p className="tracking-tighter text-[2.5rem] md:text-[3.125rem] -mt-6">see the</p>
+                <p className="font-Edwardian tracking-tight font-medium text-[4.375rem] md:text-[5.625rem] mr-3 relative inline-block transition-all duration-400 -mt-14">
                     work
                 </p>
                 <p className="text-base tracking-tight mt-2 mb-6 md:mb-0 xl:mt-0 w-fit">

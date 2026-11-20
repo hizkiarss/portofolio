@@ -14,7 +14,7 @@ const Logo: React.FC<LogoProps> = ({ img, name }) => {
                 alt={`${name} logo`}
                 className={"w-4 md:w-6"}
             />
-            <p className={"font-Helvetica text-[8px] md:text-xs font-semibold"}>{name}</p>
+            <p className={"font-Helvetica text-[0.5rem] md:text-xs font-semibold"}>{name}</p>
         </div>
     );
 };

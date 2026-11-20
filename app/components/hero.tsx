@@ -42,7 +42,7 @@ const Hero = () => {
 
     return (
         <div
-            className="md:mb-0 md:pt-10 xl:max-h-[800px] xl:h-svh flex flex-col justify-start mx-4 relative">
+            className="md:mb-0 md:pt-10 xl:max-h-[50rem] xl:h-svh flex flex-col justify-start mx-4 relative">
             <FadeInAnimation scroll={false} delay={0.7}>
                 <div className={"items-center lg:grid grid-cols-6"}>
                     <div className={"col-span-4"}>
@@ -52,13 +52,13 @@ const Hero = () => {
                                        className={`relative z-20 border-black rounded-full w-24 md:w-32 xl:w-44 md:mt-0  ${hoveredIndex != null ? "filter blur-sm" : "opacity-100"}`}/>
                             </div>
                             <h1
-                                className={`tracking-tighter leading-[80px] text-[80px] md:text-[100px] font-Aeonik md:-ml-3 ${
+                                className={`tracking-tighter leading-[5rem] text-[5rem] md:text-[6.25rem] font-Aeonik md:-ml-3 ${
                                     hoveredIndex != null ? "filter blur-sm" : "opacity-100"
                                 }`}
                             >
                                 full-
                                 <span
-                                    className={"font-Edwardian font-medium text-[130px] lg:text-[165px] md:text-[185px]"}>stack</span>
+                                    className={"font-Edwardian font-medium text-[8.125rem] lg:text-[10.3125rem] md:text-[11.5625rem]"}>stack</span>
                                 <br/> developer
                             </h1>
                         </div>
@@ -66,7 +66,7 @@ const Hero = () => {
                     </div>
 
                     <div
-                        className={"col-span-2 mt-8 text-xs md:text-[15px] flex flex-col md:flex-row md:gap-14 lg:gap-1 md:items-center lg:items-start lg:flex-col  gap-4 font-Helvetica md:leading-6"}>
+                        className={"col-span-2 mt-8 text-xs md:text-[0.9375rem] flex flex-col md:flex-row md:gap-14 lg:gap-1 md:items-center lg:items-start lg:flex-col  gap-4 font-Helvetica md:leading-6"}>
                         <p className={`${
                             hoveredIndex != null ? "filter blur-sm" : "opacity-100"
                         }`}>I'm Hizkia Sihombing, a full-stack software engineer specializing in building dynamic web

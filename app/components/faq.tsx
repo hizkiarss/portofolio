@@ -58,14 +58,14 @@ const faqs = [
 
 const Faq = () => {
     return (
-        <section className="w-full  flex flex-col  py-10 mb-20">
+        <section id="faq" className="w-full  flex flex-col  py-10 mb-20">
 
-            <div className='text-[50px] tracking-tighter mb-10 px-2 lg:px-2 xl:px-0'>
+            <div className='text-[3.125rem] tracking-tighter mb-10 px-2 lg:px-2 xl:px-0'>
                 <FadeInAnimation scroll={true} vertical={true} delay={0.5}>
-                    <p className='gap-6'><span className='font-Edwardian tracking-wide text-[90px]'>ask</span> away&mdash;
+                    <p className='gap-6'><span className='font-Edwardian tracking-wide text-[5.625rem]'>ask</span> away&mdash;
                     </p></FadeInAnimation>
                 <FadeInAnimation scroll={true} vertical={true} delay={0.8}>
-                    <p className='-mt-9 lg:-mt-10 leading-[50px] '>I&apos;m here <span className={'-mt-12'}>to<span className='font-Edwardian tracking-wide text-[90px] ml-3'>help</span></span>.</p>
+                    <p className='-mt-9 lg:-mt-10 leading-[3.125rem] '>I&apos;m here <span className={'-mt-12'}>to<span className='font-Edwardian tracking-wide text-[5.625rem] ml-3'>help</span></span>.</p>
                 </FadeInAnimation>
             </div>
 

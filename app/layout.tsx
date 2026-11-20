@@ -16,7 +16,15 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
+        <head>
+            {/* Keeps --page-w equal to the page width minus the scrollbar (used by the fluid rem scale in globals.css). */}
+            <script
+                dangerouslySetInnerHTML={{
+                    __html: `(function(){var d=document.documentElement;function s(){d.style.setProperty('--page-w',d.clientWidth+'px')}s();addEventListener('resize',s);if(window.ResizeObserver)new ResizeObserver(s).observe(d);})();`,
+                }}
+            />
+        </head>
         <body className="bg-white text-black font-Helvetica ">
         <LoadingOverlay/>
         <ClientOnly>

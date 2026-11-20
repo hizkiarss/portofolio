@@ -17,7 +17,9 @@ const config: Config = {
 			},
 			screens: {
 				mon: '1900px',
-				'tall': { 'raw': '(min-height: 800px)' },
+				// "Tall" = taller than the 1440x900 design canvas in proportion (only used with xl:).
+				// An aspect-ratio check keeps the same layout choice at every screen size.
+				'tall': { 'raw': '(max-aspect-ratio: 8/5)' },
 			},
 			colors: {
 				background: 'hsl(var(--background))',

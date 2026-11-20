@@ -1,44 +1,46 @@
 'use client';
 import React from 'react';
-import {goToDiv} from "@/utils/goToContact";
 import Image from "next/image";
 import DenpasarClock from '@/utils/denpasarClock';
 import Link from "next/link";
-import scrollTo from "@/utils/scrollTo";
+import scrollTo, {SectionId} from "@/utils/scrollTo";
 
 
 const Navbar = () => {
+    // Real #hash links (work without JS, open-in-new-tab, etc.), upgraded to smooth scroll.
+    const go = (e: React.MouseEvent, id: SectionId) => {
+        e.preventDefault();
+        scrollTo(id);
+    };
 
-    const email = "hizkiasihombing@gmail.com";
+    const email = "hizkiarssihombing@gmail.com";
     const subject = "Hello!";
     const body = "Hello, I’m interested in working together on a project.";
     const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     return (
         <nav
-            className="mt-0 hidden xl:flex md:py-10 text-xs md:text-base  h-screen flex-col justify-between !sticky top-0 !w-[86px] z-10 bg-white ">
+            className="mt-0 hidden xl:flex md:py-10 text-xs md:text-base  h-screen flex-col justify-between !sticky top-0 !w-[5.375rem] z-10 bg-white ">
             <div className={"flex flex-col items-start"}>
-                <a href={"/"}>
-                    <Image src="/logo/logo.svg" alt="logo" width={0} height={0} className="w-[68px]"/>
+                <a href="#top" onClick={(e) => go(e, 'top')} aria-label="Back to top">
+                    <Image src="/logo/logo.svg" alt="logo" width={0} height={0} className="w-[4.25rem]"/>
                 </a>
 
                 <div className="mt-4 flex flex-col gap-1 items-start">
-                    <a onClick={() => scrollTo('works')}>
-                        <button className="text-gray-400 hover:text-black transition-all duration-300">
-                            Our works
-                        </button>
+                    <a href="#works" onClick={(e) => go(e, 'works')}
+                       className="text-gray-400 hover:text-black transition-all duration-300">
+                        Our works
                     </a>
-                    <a onClick={() => scrollTo('faq')}>
-                        <button className="text-gray-400 hover:text-black transition-all duration-300">
-                            FAQ
-                        </button>
+                    <a href="#faq" onClick={(e) => go(e, 'faq')}
+                       className="text-gray-400 hover:text-black transition-all duration-300">
+                        FAQ
                     </a>
 
 
-                    <button onClick={() => goToDiv("contact")}
-                            className="-ml-1 mt-1 group border border-black bg-black text-white  transition-all duration-300 w-[76px] hover:w-[86px] h-4 rounded-xl p-3 relative">
+                    <button onClick={() => scrollTo("contact")}
+                            className="-ml-1 mt-1 group border border-black bg-black text-white  transition-all duration-300 w-[4.75rem] hover:w-[5.375rem] h-4 rounded-xl p-3 relative">
                         <p className="absolute top-0 left-2 group-hover:left-4 transition-all duration-500">Contact</p>
-                        <div className='absolute group-hover:left-[6px] -left-2 top-[10px] transition-all duration-500'>
+                        <div className='absolute group-hover:left-[0.375rem] -left-2 top-[0.625rem] transition-all duration-500'>
                             <div className="w-1 h-1 bg-white rounded-full animate-pulseCircle "/>
                         </div>
 

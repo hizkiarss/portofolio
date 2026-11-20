@@ -60,7 +60,7 @@ const HoverVideo: React.FC<HoverVideoProps> = ({src, title, idx, hoveredIndex, p
                 playsInline
                 className={`
                     transition-all duration-500 ease-out w-full object-cover mt-2
-                    ${!anyHovered ? "h-[50svh] max-h-[400px]" : isHovered ? "h-[60svh] max-h-[500px]" : "h-[38svh] max-h-[400px]"}
+                    ${!anyHovered ? "h-[50svh] max-h-[25rem]" : isHovered ? "h-[60svh] max-h-[31.25rem]" : "h-[38svh] max-h-[25rem]"}
                 `}
             />
         </div>

@@ -7,7 +7,7 @@ const Cta = () => {
     const [isVisible, setIsVisible] = useState(false);
     const parentRef = useRef<HTMLDivElement>(null);
 
-    const email = "hizkiasihombing@gmail.com";
+    const email = "hizkiarssihombing@gmail.com";
     const subject = "Hello!";
     const body = "Hello, I’m interested in working together on a project.";
 
@@ -46,10 +46,10 @@ const Cta = () => {
         >
             <div
                 className='flex flex-col justify-between items-center group  overflow-hidden '>
-                <p className='text-[20px] z-20'>Big ideas need bold support.</p>
+                <p className='text-[1.25rem] z-20'>Big ideas need bold support.</p>
 
-               <div className={"relative h-[300px] md:h-[400px]  w-full"}>
-                   <p className={`text-[50px] rotate-3 md:rotate-0 transition-all duration-1000 tracking-tighter w-fit absolute lg:left-10 xl:left-20  top-4 md:top-48 px-4 z-20 ${isVisible ? "opacity-100" : "opacity-0"}`}>
+               <div className={"relative h-[18.75rem] md:h-[25rem]  w-full"}>
+                   <p className={`text-[3.125rem] rotate-3 md:rotate-0 transition-all duration-1000 tracking-tighter w-fit absolute lg:left-10 xl:left-20  top-4 md:top-48 px-4 z-20 ${isVisible ? "opacity-100" : "opacity-0"}`}>
                        call
                    </p>
 
@@ -61,12 +61,12 @@ const Cta = () => {
                            width={250}
                            height={250}
                            src="/photos/logoBottom.png"
-                           className='w-[350px] md:w-[530px] lg:w-[800px] object-cover'
+                           className='w-[21.875rem] md:w-[33.125rem] lg:w-[50rem] object-cover'
                            alt=''
                        />
                    </div>
 
-                   <p className={`text-[50px] -rotate-6 md:rotate-0 transition-all duration-1000 tracking-tighter absolute bottom-4 right-0 md:top-48 px-4 md:right-3 lg:right-10 xl:right-20 z-20 ${isVisible ? "opacity-100" : "opacity-0"}`}>
+                   <p className={`text-[3.125rem] -rotate-6 md:rotate-0 transition-all duration-1000 tracking-tighter absolute bottom-4 right-0 md:top-48 px-4 md:right-3 lg:right-10 xl:right-20 z-20 ${isVisible ? "opacity-100" : "opacity-0"}`}>
                        now.
                    </p>
                </div>

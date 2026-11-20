@@ -114,6 +114,31 @@
 
 
 
+/*
+ * Fluid desktop scaling.
+ * The desktop layout is designed on a 1440px-wide canvas (content box 80rem = 1280px).
+ * From the xl breakpoint up, 1rem = page width / 90, so at 1440px wide 1rem = 16px,
+ * at 1920px 1rem ≈ 21px, at 2560px 1rem ≈ 28px. Every rem-based size (Tailwind spacing,
+ * text, and the converted arbitrary values) scales together, so the layout keeps the
+ * same proportions on any desktop screen. --page-w is the width without the scrollbar,
+ * set by the inline script in app/layout.tsx; 100vw is the no-JS fallback.
+ * Below xl (phones, tablets, small laptops) 1rem stays 16px.
+ */
+@media (min-width: 1280px) {
+  html {
+    font-size: calc(var(--page-w, 100vw) / 90);
+  }
+}
+
+/*
+ * Never let content spill sideways (e.g. fade-in elements that start at scale(1.1)).
+ * `clip` (unlike `hidden`) doesn't create a scroll container, so position: sticky keeps working.
+ */
+html,
+body {
+  overflow-x: clip;
+}
+
 @layer base {
   * {
     @apply border-border;

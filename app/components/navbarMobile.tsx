@@ -3,18 +3,48 @@ import React, {useState} from 'react'
 import {
     Drawer,
     DrawerContent,
+    DrawerTitle,
 
 } from "@/components/ui/drawer"
 import Image from 'next/image'
 import DenpasarClock from '@/utils/denpasarClock';
 import {ArrowRight} from 'lucide-react';
+import scrollTo, {SectionId} from '@/utils/scrollTo';
+
+const MENU_LINKS: { id: SectionId; label: string }[] = [
+    {id: 'top', label: 'Home'},
+    {id: 'about', label: 'About'},
+    {id: 'works', label: 'Our Work'},
+    {id: 'faq', label: 'FAQ'},
+    {id: 'contact', label: 'Contact'},
+]
+
+const email = "hizkiarssihombing@gmail.com";
+const mailtoLink = `mailto:${email}?subject=${encodeURIComponent("Hello!")}&body=${encodeURIComponent("Hello, I’m interested in working together on a project.")}`;
+
+const SOCIAL_LINKS = [
+    {href: "https://www.linkedin.com/in/hizkiasihombing/", src: "/logo/linkedinwhite.png", label: "LinkedIn"},
+    {href: "https://github.com/hizkiarss", src: "/logo/githubwhite.png", label: "GitHub"},
+    {href: mailtoLink, src: "/logo/gmailwhite.png", label: "Email"},
+]
 
 
 const NavbarMobile = () => {
     const [isMenuOpen, setMenuOpen] = useState(false)
 
+    // Close the drawer first (it locks page scrolling while open), then scroll to the section.
+    const go = (e: React.MouseEvent, id: SectionId) => {
+        e.preventDefault();
+        if (!isMenuOpen) {
+            scrollTo(id);
+            return;
+        }
+        setMenuOpen(false);
+        setTimeout(() => scrollTo(id), 500);
+    };
+
     return (
-        <div className='
+        <div data-mobile-nav className='
   xl:hidden
   mb-2
   flex justify-between items-center 
@@ -22,7 +52,7 @@ const NavbarMobile = () => {
   sticky top-0 z-40
   bg-gradient-to-t from-white/0 via-white/80 to-white/100
 '>
-            <a href={"/"}>
+            <a href="#top" onClick={(e) => go(e, 'top')} aria-label="Back to top">
                 {/* Tablet */}
                 <Image
                     src="/logo/logo.svg"
@@ -59,7 +89,8 @@ const NavbarMobile = () => {
 
             {/* Drawer */}
             <Drawer open={isMenuOpen} onOpenChange={setMenuOpen}>
-                <DrawerContent className='pt-5 px-4 pb-3'>
+                <DrawerContent className='pt-5 px-4 pb-3' aria-describedby={undefined}>
+                    <DrawerTitle className="sr-only">Menu</DrawerTitle>
                     <div className="text-gray-500 mt-4 text-xs flex justify-between">
                         <p>Denpasar</p>
                         <DenpasarClock/>
@@ -68,37 +99,23 @@ const NavbarMobile = () => {
 
                     <div className=''>
                         <div className='gap-3 flex flex-col w-full items-start   mt-6'>
-                            <a href={"/"}>
-                                <button className='text-4xl tracking-tighter flex gap-2 items-center '>
-                                    Home
+                            {MENU_LINKS.map(({id, label}) => (
+                                <a key={id} href={`#${id}`} onClick={(e) => go(e, id)}
+                                   className='text-4xl tracking-tighter flex gap-2 items-center'>
+                                    {label}
                                     <ArrowRight className='-mb-1'/>
-                                </button>
-                            </a>
-
-                            <a href={"/about-us"}>
-                                <button className='text-4xl tracking-tighter flex gap-2 items-center '>
-                                    About Us
-                                    <ArrowRight className='-mb-1'/>
-                                </button>
-                            </a>
-
-
-                            <a href={"/works"}>
-                                <button className='text-4xl tracking-tighter flex gap-2 items-center '>
-                                    Our Work
-                                    <ArrowRight className='-mb-1'/>
-                                </button>
-                            </a>
+                                </a>
+                            ))}
                         </div>
 
 
                         <div className='flex gap-2 justify-end mt-6'>
-                            <Image src={"/logo/linkedinwhite.png"} alt='' width={20} height={20}
-                                   className='invert w-7 h-fit'/>
-                            <Image src={"/logo/githubwhite.png"} alt='' width={20} height={20}
-                                   className='invert w-7 h-fit'/>
-                            <Image src={"/logo/gmailwhite.png"} alt='' width={20} height={20}
-                                   className='invert w-7 h-fit'/>
+                            {SOCIAL_LINKS.map(({href, src, label}) => (
+                                <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
+                                    <Image src={src} alt={label} width={20} height={20}
+                                           className='invert w-7 h-fit'/>
+                                </a>
+                            ))}
                         </div>
                     </div>
 
